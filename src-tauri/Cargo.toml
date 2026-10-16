@@ -1,0 +1,15 @@
+[package]
+name = "postie"
+version = "0.1.0"
+edition = "2021"
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = [] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+# Default TLS (SChannel on Windows) trusts the Windows certificate store, which corporate TLS inspection relies on.
+reqwest = { version = "0.12", features = ["gzip", "brotli", "deflate"] }
+tokio = { version = "1", features = ["macros", "sync"] }
